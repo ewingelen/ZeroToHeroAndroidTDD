@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        val uiState = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        uiState = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             savedInstanceState.getSerializable(UI_STATE_KEY, UiState::class.java)!!
         } else {
             @Suppress("DEPRECATION")
